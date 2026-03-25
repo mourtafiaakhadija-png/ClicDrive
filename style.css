@@ -1,0 +1,60 @@
+.body {
+    font-family: "Playfair Display", serif;
+    background: #f4f5f9;
+    color: #111827;
+}
+
+.main-content {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+h1 span {
+    color: #3D52DF;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 16px 16px 14px;
+}
+
+.car-tags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.tag-icon {
+    width: 18px;
+    height: 18px;
+    color: #9ca3af;
+}
+
+.tag-titre {
+    font-size: 10px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.card-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
