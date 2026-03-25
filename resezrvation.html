@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-projet</title>
+    <style>
+    body {
+        background-image: url("c:/Users/fatie/Downloads/WhatsApp Image 2026-03-24 at 3.55.33 PM.jpeg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover; 
+         }
+
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 150vh;
+    color:white
+         }
+    .form {
+    border:2px solid rgba(38, 12, 50, 0.2) ;
+    backdrop-filter: blur(25px);
+    padding: 50px;
+    width: 460px;
+    border-radius: 20px;
+    color:white
+         }
+     h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:white
+         }
+    .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    color:white
+    
+         }
+    input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 8px;
+    outline: none;
+    background-color: transparent;
+    color:white
+                }
+    input::placeholder {
+    color:white ;
+}
+    textarea {
+    height: 80px;
+    margin-bottom: 15px;
+    color:white;
+    background-color: transparent;
+     
+         }
+    textarea::placeholder{
+    color: white;
+                     }
+   .transparent-select {
+  background: transparent;
+  border: 1px solid rgb(253, 253, 253);
+  color: rgb(41, 38, 38);
+  margin-bottom: 5px;
+   }
+    button {
+    width: 100%;
+    padding: 12px;
+    background: #7228a7;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+      }
+</style>
+</head>
+<body>
+<div class="container">
+    <form class="form">
+        <h2> RESERVEZ VOTRE VOITURE !</h2>
+
+        <div class="row">
+            <input type="text" placeholder="Nom " required>
+            <input type="email" placeholder="Prenom" required>
+        </div>
+
+        <div class="row">
+            <input type="tel" placeholder="Téléphone" required>
+            <input type="text" placeholder="Email" required>
+        </div>
+
+        <div class="row">
+              <select class="transparent-select"  >
+              <option class="special">Choisir une voiture</option>
+              <option value="Audi ">audi -etron GT </option>
+              <option value="Audi ">audi -q2 </option>
+              <option value="Audi ">audi -q3 </option>
+              <option value="Audi ">audi -q7 </option>
+              <option value="BMW">BMW -ix3</option>
+              <option value="BMW">BMW -serie3</option>
+              <option value="BMW">BMW -x3</option>
+              <option value="Citroen" >citroen -berlingo</option> 
+              <option value="Citroen" >citroen -c4</option> 
+              <option value="Citroen" >citroen -c4x</option> 
+              <option value="Dacia" >Dacia -logan </option> 
+              <option value="Dacia" >Dacia -duster</option> 
+              <option value="Dacia" >Dacia -sandero</option> 
+              <option value="ferrari" >ferrari -f8 tributo</option> 
+              <option value="Hyundai" >Hyundai -i10</option> 
+              <option value="Hyundai" >Hyundai -kona </option> 
+              <option value="Hyundai" >Hyundai -santa fe</option> 
+              <option value="Jeep" >Jeep -cherokee</option> 
+              <option value="Jeep" >Jeep - gladiator </option>
+              <option value="Jeep" >Jeep -wrangler</option>
+              <option value="Mercedes" >Mercedes -g-class</option>
+              <option value="Mercedes" >Mercedes -glc</option>
+              <option value="Mercedes" >Mercedes -s-class</option>
+              <option value=" Porches" > Porche -panamera</option>
+              <option value=" Porches" > Porche -718 Boxster</option>
+              <option value=" Range rover" > Range rover -discovery</option>
+              <option value=" Range rover" > Range rover -sport</option>
+              <option value="  Renault" >  Renault -clio</option>
+              <option value="  Renault" >  Renault -express</option>
+              <option value="  Renault" >  Renault -kango techno</option>
+              <option value="  Renault" >  Renault -Skoda Superb</option>
+              <option value="  Toyota" >  Toyota -c-hr</option>
+              <option value="  Toyota" >  Toyota -hilux</option>
+              <option value="  Toyota" >  Toyota -yaris</option>
+              <option value="  Volkswagen" >  Volkswagen -t-cross </option>
+              <option value="  Volkswagen" >  Volkswagen -t-roc</option>
+              <option value="   Volvo" >   Volvo -s60</option>
+              <option value="   Volvo" >   Volvo -xc40</option>
+              <option value="   Volvo" >   Volvo - xc90 </option>            
+          </div>  
+          <div class="row">
+             </select>
+              <input type="text" placeholder="Lieu de prise en charge" required>
+        </div>
+
+        <div class="row">
+            <h4> date de récupération: </h4> 
+            <input type="date" placeholder="datte de récupération "required>
+            <h4> date de retour: </h4> 
+            <input type="date" placeholder="datte de retour" required>
+        </div>
+
+        <textarea placeholder="Message ou demande spéciale (optionnel)"></textarea>
+
+        <button type="submit">Confirmer la réservation</button>
+    </form>
+</div>
+</body>
+</html>
+       
+  
