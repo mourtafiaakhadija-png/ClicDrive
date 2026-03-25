@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircuitRent - Location de Voiture</title>
+    <script src="https://kit.fontawesome.com/7c4a4dec5f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: rgb(133, 60, 207);
+            --dark-bg: #0f1014;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- SECTION HERO --- */
+        .hero-container {
+            background-color: var(--dark-bg);
+            background-image: radial-gradient(circle at 2px 2px, #222 1px, transparent 0);
+            background-size: 40px 40px;
+            color: white;
+            min-height: 85vh;
+            position: relative;
+            padding-bottom: 100px;
+            /* Découpe asymétrique en bas */
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 55% 85%, 50% 100%, 0 100%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: white; }
+
+        .btn-contact {
+            background: var(--primary-purple);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Contenu Hero */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+        }
+
+        .hero-text { max-width: 500px; }
+        
+        .badge {
+            background: rgba(133, 60, 207, 0.2);
+            color: var(--primary-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary-purple);
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            margin: 20px 0;
+            line-height: 1.1;
+        }
+
+        .car-img {
+            width: 50%;
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+        }
+
+        /* --- BARRE DE RECHERCHE FLOTTANTE --- */
+        .search-box {
+            position: absolute;
+            bottom: -35px;
+            left: 8%;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #666;
+            z-index: 10;
+        }
+
+        .search-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-right: 1px solid #eee;
+            padding-right: 20px;
+        }
+
+        .search-item:last-child { border: none; }
+
+        .search-item input {
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-btn {
+            background: var(--primary-purple);
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- SECTION INFOS --- */
+        .info-section {
+            padding: 150px 8% 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .img-main {
+            width: 90%;
+            height: auto;
+            border-radius: 20px;
+            /* Effet de découpe comme sur l'image */
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 25% 75%, 0 100%);
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 { font-size: 1.8rem; color: #000; }
+        .stat-item p { font-size: 0.8rem; color: #888; }
+
+        /* --- BANDEAU CARACTÉRISTIQUES --- */
+        .features-bar {
+            background: var(--primary-purple);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 60px 8%;
+            color: white;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .feature-card i {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.2);
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .feature-card h4 { margin-bottom: 10px; }
+        .feature-card p { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero-container">
+        <header>
+            <div class="logo">CircuitRent</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a></li>
+                    <li><a href="#">Comment ça marche</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-contact">Contactez-nous</a>
+        </header>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge"><i class="fa-solid fa-crown"></i> Location de voiture de confiance</span>
+                <h1>Trouvez le véhicule qui vous correspond</h1>
+                <p style="opacity: 0.6; font-size: 0.9rem;">Le choix du véhicule est l'élément le plus important pour que votre voyage se déroule en toute sécurité.</p>
+                
+                <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px;">
+                    <div style="display: flex;">
+                        <img src="https://i.pravatar.cc/40?u=a" style="border-radius: 50%; border: 2px solid #000;">
+                        <img src="https://i.pravatar.cc/40?u=b" style="border-radius: 50%; border: 2px solid #000; margin-left: -15px;">
+                        <img src="https://i.pravatar.cc/40?u=c" style="border-radius: 50%; border: 2px solid #000; margin-left: -15px;">
+                    </div>
+                    <div>
+                        <div style="color: gold; font-size: 0.8rem;">★★★★★ 4.9</div>
+                        <div style="font-size: 0.7rem; opacity: 0.6;">Avis basés sur plus de 15.5M de personnes</div>
+                    </div>
+                </div>
+            </div>
+            
+            <img src="https://www.tesla.com/sites/default/files/models-assets/spectacular/model-s.png" alt="Voiture Tesla" class="car-img">
+        </div>
+
+        <div class="search-box">
+            <div class="search-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" placeholder="Lieu de prise en charge">
+            </div>
+            <div class="search-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <input type="text" placeholder="Date de départ" onfocus="(this.type='date')">
+            </div>
+            <div class="search-item">
+                <i class="fa-solid fa-clock"></i>
+                <input type="text" placeholder="Heure" onfocus="(this.type='time')">
+            </div>
+            <button class="search-btn">Rechercher</button>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div>
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800" class="img-main" alt="Conduite">
+        </div>
+        <div class="info-content">
+            <p style="color: var(--primary-purple); font-weight: 600; font-size: 0.8rem; letter-spacing: 2px;">BIENVENUE CHEZ CIRCUITRENT</p>
+            <h2 style="font-size: 2.5rem; margin: 15px 0;">Une agence de location fiable et de qualité</h2>
+            <p style="color: #777; font-size: 0.9rem;">Avec une solide réputation et des avis clients positifs, CircuitRent est reconnu pour sa fiabilité et ses services de haute qualité.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>125K+</h3>
+                    <p>Utilisateurs Actifs</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15K+</h3>
+                    <p>Excellents Avis</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20K+</h3>
+                    <p>Voitures Disponibles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-bar">
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h4>Transactions rapides</h4>
+            <p>Une transaction éclair conçue pour être exécutée en un temps record pour votre confort.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Sûr et confortable</h4>
+            <p>Grâce à un système de sécurité sophistiqué, chaque transaction est garantie et protégée.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h4>Qualité certifiée</h4>
+            <p>Tous nos véhicules sont régulièrement inspectés et entretenus par des techniciens professionnels.</p>
+        </div>
+    </section>
+
+</body>
+</html>
