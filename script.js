@@ -1,5 +1,5 @@
 // 1) njibo ga3 les boutons "Rent now"
-const rentButtons = document.querySelectorAll('.louer-btn');
+const rentButtons = document.querySelectorAll('.louer-btn2');
 
 // 2) n3iytu 3la chaque bouton wa7ed b tour
 rentButtons.forEach(function (btn) {

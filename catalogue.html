@@ -5,21 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catalogue</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7c4a4dec5f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <!--HEADER-->
     <header>
-        <nav>...</nav>
+        <a href="#" class="logo">
+            <i class="fas fa-car"></i>
+            CliqueDrive
+        </a>
+        
+        <!--Navbar-->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#accueil"><i class="fa-solid fa-house"></i> Accueil</a></li>
+                <li><a class="catalog" href="catalogue.html"><i class="fa-solid fa-car"></i> Catalogue</a></li>
+                <li><a href="resezrvation.html"><i class="fa-solid fa-calendar"></i> Réservation</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+            </ul>
+
+        </nav>
     </header>
-    hhhhhhhh
+
+    <!-- HAUT SECTION -->
+    <section class="haut">
+        <div class="haut-content">
+            <p class="haut-header">ClicDrive - Catalogue</p>
+            <h1>Découvrez notre sélection de véhicules</h1>
+            <p>Trouvez la voiture idéale pour vos trajets quotidiens, voyages en famille ou escapades de luxe.</p>
+            <p>Choisissez la catégorie, le prix et la transmission qui vous conviennent.</p>
+        </div>
+    </section>
+
+
+    <!-- FILTRES -->
+    <section class="filtres-section">
+        <div class="filtres-content">
+
+            <!-- Category Btns -->
+            <div class="filtre-item">
+                <label class="filtre-label">Catégorie</label>
+                <div class="category-btns" id="categoryBtns">
+                    <button class="categ-btn actif" id-category="all">All</button>
+                    <button class="categ-btn" id-category="Populaire">Populaire</button>
+                    <button class="categ-btn" id-category="Familiale">Familiale</button>
+                    <button class="categ-btn" id-category="SUV">SUV</button>
+                    <button class="categ-btn" id-category="Luxe">Luxe</button>
+                </div>
+            </div>
+            
+            <!-- Prix Rang -->
+            <div class="filtre-item">
+                <label class="filtre-label">Prix/jour (DH)</label>
+                <div class="prix-rang">
+                    <input type="number" id="minPrix" placeholder="Min" min="0" value="">
+                    <span>-</span>
+                    <input type="number" id="maxPrix" placeholder="Max" min="0" value="">
+                </div>
+            </div>
+            
+            <!-- Transmission Option --> 
+            <div class="filtre-item">
+                <label class="filtre-label">Transmission:</label>
+                <div class="transm-option">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="manuel" value="Manuel">
+                        <span>Manuel</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="auto" value="Auto">
+                        <span>Automatic</span>
+                    </label>
+                </div>
+            </div>
+                
+            <button class="reset-btn" type="reset">
+                <i class="fas fa-undo"></i>Supprimer filtrage
+            </button>
+        </div>
+    </section>
+
+    <!--GRID CARDS-->
     <div class="cards" >
         <!-- Card 1 -->
         <div class="card">
-            <img class="card-img" src="../Images/Hyundai/Kona/2.jpg" alt="Hyundai Kona">
+            <img class="card-img" src="Images/Hyundai/Kona/2.jpg" alt="Hyundai Kona">
             
             <div class="card-body">
                 <p class="card-titre">Hyundai</p>
                 <p class="card-model">Kona</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">550 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -45,12 +121,12 @@
 
         <!-- Card 2 -->
         <div class="card">
-            <img class="card-img" src="../Images/Audi/Q3/4.jpg" alt="Audi Q3">
+            <img class="card-img" src="Images/Audi/Q3/4.jpg" alt="Audi Q3">
             
             <div class="card-body">
                 <p class="card-titre">Audi</p>
                 <p class="card-model">Q3</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -76,12 +152,12 @@
 
         <!-- Card 3 -->
         <div class="card">
-            <img class="card-img" src="../Images/Mercedess/S-Class/2.jpg" alt="Mercedes S‑Class">
+            <img class="card-img" src="Images/Mercedess/S-Class/2.jpg" alt="Mercedes S‑Class">
             
             <div class="card-body">
                 <p class="card-titre">Mercedes</p>
                 <p class="card-model">S‑Class</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -107,12 +183,12 @@
 
         <!-- Card 4 -->
         <div class="card">
-            <img class="card-img" src="../Images/Dacia/Logan/1.jpg" alt="Dacia Logan">
+            <img class="card-img" src="Images/Dacia/Logan/1.jpg" alt="Dacia Logan">
             
             <div class="card-body">
                 <p class="card-titre">Dacia</p>
                 <p class="card-model">Logan</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -138,12 +214,12 @@
 
         <!-- Card 5 -->
         <div class="card">
-            <img class="card-img" src="../Images/Volkswagen/T-roc/11.jpg" alt="Volkswagen T‑Roc">
+            <img class="card-img" src="Images/Volkswagen/T-roc/11.jpg" alt="Volkswagen T‑Roc">
             
             <div class="card-body">
                 <p class="card-titre">Volkswagen</p>
                 <p class="card-model">T‑Roc</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">550 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -169,12 +245,12 @@
 
         <!-- Card 6 -->
         <div class="card">
-            <img class="card-img" src="../Images/Volvo/XC40/3.jpg" alt="Volvo XC40">
+            <img class="card-img" src="Images/Volvo/XC40/3.jpg" alt="Volvo XC40">
             
             <div class="card-body">
                 <p class="card-titre">Volvo</p>
                 <p class="card-model">XC40</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1500 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -200,12 +276,12 @@
 
         <!-- Card 7 -->
         <div class="card">
-            <img class="card-img" src="../Images/Citroen/C4/5.jpg" alt="Citroën C4">
+            <img class="card-img" src="Images/Citroen/C4/5.jpg" alt="Citroën C4">
             
             <div class="card-body">
                 <p class="card-titre">Citroën</p>
                 <p class="card-model">C4</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">750 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -231,12 +307,12 @@
 
         <!-- Card 8 -->
         <div class="card">
-            <img class="card-img" src="../Images/Jeep/Gladiator/7.jpg" alt="Jeep Gladiator">
+            <img class="card-img" src="Images/Jeep/Gladiator/7.jpg" alt="Jeep Gladiator">
             
             <div class="card-body">
                 <p class="card-titre">Jeep</p>
                 <p class="card-model">Gladiator</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1800 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -262,12 +338,12 @@
 
         <!-- Card 9 -->
         <div class="card">
-            <img class="card-img" src="../Images/Toyota/C-HR/6.png" alt="Toyota C‑HR">
+            <img class="card-img" src="Images/Toyota/C-HR/6.png" alt="Toyota C‑HR">
             
             <div class="card-body">
                 <p class="card-titre">Toyota</p>
                 <p class="card-model">C‑HR</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">800 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -293,12 +369,12 @@
 
         <!-- Card 10 -->
         <div class="card">
-            <img class="card-img" src="../Images/Range Rover/Discovery/1.jpg" alt="Range Rover Discovery">
+            <img class="card-img" src="Images/Range Rover/Discovery/1.jpg" alt="Range Rover Discovery">
             
             <div class="card-body">
                 <p class="card-titre">Range Rover</p>
                 <p class="card-model">Discovery</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -324,12 +400,12 @@
 
         <!-- Card 11 -->
         <div class="card">
-            <img class="card-img" src="../Images/BMW/Serie 3/1.jpg" alt="BMW Série 3">
+            <img class="card-img" src="Images/BMW/Serie 3/1.jpg" alt="BMW Série 3">
             
             <div class="card-body">
                 <p class="card-titre">BMW</p>
                 <p class="card-model">Série 3</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1000 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -355,12 +431,12 @@
 
         <!-- Card 12 -->
         <div class="card">
-            <img class="card-img" src="../Images/Renault/Express/1.jpg" alt="Renault Express">
+            <img class="card-img" src="Images/Renault/Express/1.jpg" alt="Renault Express">
             
             <div class="card-body">
                 <p class="card-titre">Renault</p>
                 <p class="card-model">Express</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">400 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -386,12 +462,12 @@
 
         <!-- Card 13 -->
         <div class="card">
-            <img class="card-img" src="../Images/Porche/718 Boxster/1.jpg" alt="Porsche 718 Boxster">
+            <img class="card-img" src="Images/Porche/718 Boxster/1.jpg" alt="Porsche 718 Boxster">
                 
             <div class="card-body">
                 <p class="card-titre">Porsche</p>
                 <p class="card-model">718 Boxster</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">2000 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -417,12 +493,12 @@
 
         <!-- Card 14 -->
         <div class="card">
-            <img class="card-img" src="../Images/Hyundai/Santa Fe/1.jpg" alt="Hyundai Santa Fe">
+            <img class="card-img" src="Images/Hyundai/Santa Fe/1.jpg" alt="Hyundai Santa Fe">
                 
             <div class="card-body">
                 <p class="card-titre">Hyundai</p>
                 <p class="card-model">Santa Fe</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">600 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -448,12 +524,12 @@
 
         <!-- Card 15 -->
         <div class="card">
-            <img class="card-img" src="../Images/Volvo/XC90/1.jpg" alt="Volvo XC90">
+            <img class="card-img" src="Images/Volvo/XC90/1.jpg" alt="Volvo XC90">
                 
             <div class="card-body">
                 <p class="card-titre">Volvo</p>
                 <p class="card-model">XC90</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">3000 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -479,12 +555,12 @@
 
         <!-- Card 16 -->
         <div class="card">
-            <img class="card-img" src="../Images/Ferrari/1.jpg" alt="Ferrari F8 Tributo">
+            <img class="card-img" src="Images/Ferrari/1.jpg" alt="Ferrari F8 Tributo">
                 
             <div class="card-body">
                 <p class="card-titre">Ferrari</p>
                 <p class="card-model">F8 Tributo</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">13000 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -510,12 +586,12 @@
 
         <!-- Card 17 -->
         <div class="card">
-            <img class="card-img" src="../Images/Audi/etron GT/1.jpg" alt="Audi e-tron GT">
+            <img class="card-img" src="Images/Audi/etron GT/1.jpg" alt="Audi e-tron GT">
                 
             <div class="card-body">
                 <p class="card-titre">Audi</p>
                 <p class="card-model">e-tron GT</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">250 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -541,12 +617,12 @@
 
         <!-- Card 18 -->
         <div class="card">
-            <img class="card-img" src="../Images/Skoda Superb/1.jpg" alt="Skoda Superb">
+            <img class="card-img" src="Images/Skoda Superb/1.jpg" alt="Skoda Superb">
                 
             <div class="card-body">
                 <p class="card-titre">Skoda</p>
                 <p class="card-model">Superb</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">680 DH <span>/ jour</span></p>
 
                 <div class="card-tags">
                     <div class="tag">
@@ -572,12 +648,12 @@
 
         <!-- Card 19 -->
         <div class="card">
-            <img class="card-img" src="../Images/Renault/Clio/1.jpg" alt="Renault Clio">
+            <img class="card-img" src="Images/Renault/Clio/1.jpg" alt="Renault Clio">
                 
             <div class="card-body">
                 <p class="card-titre">Renault</p>
                 <p class="card-model">Clio</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -603,12 +679,12 @@
 
         <!-- Card 20 -->
         <div class="card">
-            <img class="card-img" src="../Images/Jeep/Wrangler/1.jpg" alt="Jeep Wrangler">
+            <img class="card-img" src="Images/Jeep/Wrangler/1.jpg" alt="Jeep Wrangler">
                 
             <div class="card-body">
                 <p class="card-titre">Jeep</p>
                 <p class="card-model">Wrangler</p>
-                <p class="card-prix">1200 DH <span>/ jour</span></p>
+                <p class="card-prix">1300 DH <span>/ jour</span></p>
                     
                 <div class="card-tags">
                     <div class="tag">
@@ -631,12 +707,15 @@
                 <button class="voirplus-btn">Voir plus</button>
             </div>
         </div>
-<<<<<<< HEAD
-
-=======
   
-    </div>
->>>>>>> f7f147f31090678fe5caa5819bb5563ab5f51e3f
+    </div> 
+
+    <!-- CATALOGUE VOIR PLUS -->
+        <div class="voirplus-content" id="VoirplusContent">
+            <button class="catalog-voirplus-btn" id="VoirplusBtn">
+                <i class="fas fa-chevron-down"></i> Voir plus
+            </button>
+        </div>
      <script src="script.js"></script>
 </body>
 </html>
