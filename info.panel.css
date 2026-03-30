@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5d138f;
+    --primary-dark: #4f1079;
+    --secondary: #ffff;
+    --dark: #1e293b;
+    --light: #ffffff;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    /* line-height: 1.6; */
+}
+
+.card {
+    width: 800px;
+    position: relative;
+    /* important bach overlay ytzat fo9ha */
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    /* bach ma ykhrj walo barra */
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 14px 16px 16px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.car-model {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.card-prix {
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.card-prix span {
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.card-tags {
+    display: flex;
+    /* ydihom f nafs ligne */
+    flex-wrap: wrap;
+    /* ila da9a l'espace, yhebto l ligne jaya */
+    gap: 8px;
+    /* space bin tags */
+    margin-bottom: 12px;
+    /* space ta7t tags, fo9 bouton */
+}
+
+.tag {
+    display: inline-flex;
+    /* icon + texte f nafs ligne */
+    align-items: center;
+    /* vertical center */
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.tag-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    /* space bin icon w texte */
+}
+
+.tag-titre {
+    line-height: 1;
+}
+
+.louer-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 20px;
+    border: none;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* ====== OVERLAY HOVER ====== */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(15, 23, 42, 0.45);
+    /* noir transparant (flou visuel) */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    pointer-events: none;
+    /* bach ma y3tarch clicks ila ma kaynach hover */
+    transition: opacity 0.2s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* bouton voir plus gowa overlay */
+.voirplus-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 200px;
+    border: none;
+    background: var(--dark);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(38, 2, 83, 0.763);
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.voirplus-btn:hover {
+    background: var(--dark);
+    transform: translateY(-1px);
+}
+
+/* PANEL */
+.card-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.card-detail.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.card-detail-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête de la modale avec bouton fermer */
+.card-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.8rem;
+    border-bottom: 1px solid #eef2f6;
+    background: white;
+}
+
+.card-detail-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e2a3e;
+    margin: 0;
+}
+
+.card-detail-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #8e9eae;
+    transition: color 0.2s;
+    line-height: 1;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.card-detail-close:hover {
+    color: #e53e3e;
+    background: #fff5f5;
+}
+
+/* Galerie d'images (simulation, tu peux ajouter tes vraies images) */
+.card-detail-gallery {
+    display: flex;
+    gap: 12px;
+    padding: 1.2rem 1.8rem;
+    background: #fafcff;
+    border-bottom: 1px solid #edf2f7;
+    overflow-x: auto;
+}
+
+.card-detail-img {
+    width: 100px;
+    height: 80px;
+    background: #e2e8f0;
+    border-radius: 16px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    border: 2px solid transparent;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/*.gallery-img.active {
+    border-color: #1e6f5c;
+    transform: scale(1.02);
+}*/
+
+/* Corps de la modale avec les infos */
+.card-detail-body {
+    padding: 1.2rem 1.8rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Prix principal */
+.card-detail-prix {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e6f5c;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    background: #eef9f5;
+    padding: 0.2rem 1rem;
+    border-radius: 60px;
+}
+
+/* Grille d'informations */
+.card-detail-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+    background: #f8fafd;
+    padding: 1rem;
+    border-radius: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.info-label {
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 110px;
+}
+
+.info-value {
+    color: #2d5a5a;
+    font-weight: 500;
+}
+
+/* Description */
+.card-detail-description {
+    background: #f0f7fa;
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+    color: #2c3e50;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Pied de modale avec bouton réserver */
+.card-detail-footer {
+    padding: 1rem 1.8rem 1.5rem;
+    border-top: 1px solid #edf2f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rent-btn {
+    background: #0f2b2d;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rent-btn:hover {
+    background: #1f5e55;
+    transform: scale(1.02);
+}
+
+.card-detail-footer .card-detail-prix {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e6f5c;
+}
+
+/* Scroll personnalisé 
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #eef2f6;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #b9cad6;
+    border-radius: 10px;
+}
+*/
+/* Responsive 
+@media (max-width: 550px) {
+    .card-detail-content {
+        width: 95%;
+        border-radius: 20px;
+    }
+
+    .card-detail-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-detail-prix {
+        font-size: 1.5rem;
+    }
+
+    .card-detail-info {
+        grid-template-columns: 1fr;
+    }
+
+    .card-detail-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .rent-btn {
+        justify-content: center;
+    }
+}
+*/

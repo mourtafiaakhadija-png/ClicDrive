@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-projet</title>
+    <script src="https://kit.fontawesome.com/7c4a4dec5f.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        :root {
+            --primary: #5d138f;
+            --light: #ffffff;
+            --gray: #6b7280;
+            --transition: all 0.3s ease;
+        
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #fff;
+            
+            
+        }
+
+        /* Navbar */
+        nav {
+            justify-content: space-between;
+            gap: 20px;
+            display: flex;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li a {
+            color: white;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 10px;
+
+        }
+
+        a:hover{
+            border-radius: 20px;
+            background-color: var(--gray);
+            color: white;
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--light);
+            font-size: 22px;
+            
+
+        }
+
+        .logo:hover {
+            background-color: #6b7280;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .logo-footer {
+            background-color: #fff;
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.8rem;
+
+        }
+        body {
+            background-image: url("image1.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            height: 150vh;
+            color:white
+        }
+        .form {
+            border:2px solid rgba(38, 12, 50, 0.2) ;
+            backdrop-filter: blur(25px);
+            padding: 50px;
+            width: 550px;
+            border-radius: 20px;
+            color:white
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:white
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            color:white
+        
+         }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid white;
+            border-radius: 8px;
+            outline: none;
+            background-color: transparent;
+            color:white
+        }
+        input::placeholder {
+            color:white ;
+         }
+        textarea {
+            height: 80px;
+            margin-bottom: 15px;
+            color:white;
+            background-color: transparent;
+        
+        }
+        textarea::placeholder{
+            color: white;
+        }
+        .listev {
+            background: transparent;
+            border: 1px solid rgb(253, 253, 253);
+            color: rgb(3, 3, 3);
+            margin-bottom: 5px;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 5px;
+            gap: 20px;
+            display: flex;
+            
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #29272b;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <p class="logo">
+            <i class="fas fa-car"></i>
+            CliqueDrive
+        </p>
+        
+    <!--Navbar-->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="Accueil.html"><i class="fa-solid fa-house"></i> Accueil</a></li>
+                <li><a href="catalogue.html"><i class="fa-solid fa-car"></i> Catalogue</a></li>
+                <li><a href="resezrvation.html"><i class="fa-solid fa-calendar"></i> Réservation</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        <form class="form">
+            <h2> RESERVEZ VOTRE VOITURE !</h2>
+
+            <div class="row">
+                <input type="text" placeholder="Nom " required>
+                <input type="text" placeholder="Prénom" required>
+            </div>
+
+            <div class="row">
+                <input type="tel" placeholder="Téléphone" required>
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <div class="row">
+              <select class="listev"  >
+                <option>Choisir une voiture</option>
+                <option value="2500">audi -etron GT </option>
+                <option value="900 ">audi -q2 </option>
+                <option value="1300 ">audi -q3 </option>
+                <option value="1500 ">audi -q7 </option>
+                <option value="1950">BMW -ix3</option>
+                <option value="100">BMW -serie3</option>
+                <option value="1500">BMW -x3</option>
+                <option value="500" >citroen -berlingo</option> 
+                <option value="7500" >citroen -c4</option> 
+                <option value="400" >citroen -c4x</option> 
+                <option value="300" >Dacia -logan </option> 
+                <option value="400" >Dacia -duster</option> 
+                <option value="300" >Dacia -sandero</option> 
+                <option value="13000" >ferrari -f8 tributo</option> 
+                <option value="300" >Hyundai -i10</option> 
+                <option value="550" >Hyundai -kona </option> 
+                <option value="600" >Hyundai -santa </option> 
+                <option value="1200" >Jeep -cherokee</option> 
+                <option value="1800" >Jeep - gladiator </option>
+                <option value="1300" >Jeep -wrangler</option>
+                <option value="6000" >Mercedes -g-class</option>
+                <option value="1500" >Mercedes -glc</option>
+                <option value="300" >Mercedes -s-class</option>
+                <option value="2000 " > Porche -panamera</option>
+                <option value="2000" > Porche -718 Boxster</option>
+                <option value="1300 " > Range rover -discovery</option>
+                <option value="200 " > Range rover -sport</option>
+                <option value="300 " >  Renault -clio</option>
+                <option value="400" >  Renault -express</option>
+                <option value="400" >  Renault -kango techno</option>
+                <option value="680" >  Renault -Skoda Superb</option>
+                <option value="800" >  Toyota -c-hr</option>
+                <option value="1300" >  Toyota -hilux</option>
+                <option value="300" >  Toyota -yaris</option>
+                <option value="590" >  Volkswagen -t-cross </option>
+                <option value="550" >  Volkswagen -t-roc</option>
+                <option value="1200" >   Volvo -s60</option>
+                <option value="1500" >   Volvo -xc40</option>
+                <option value="300" >   Volvo - xc90 </option>            
+          
+             </select>
+             <select class="listev">
+                <option >Choisir une ville</option>
+                <option >Casablanca </option>
+                <option >Rabat </option>
+                <option >Agadir</option>
+                <option >Marrakech</option>
+                <option >Essaouira </option>
+                <option >Taroudant </option>
+                <option >Guelmim </option>
+                <option >Tantan</option>
+             </select>
+                
+            </div>
+
+            <div class="row">
+                <h4> date de récupération: </h4> 
+                <input type="date" placeholder="datte de récupération "required>
+                <h4> date de retour: </h4> 
+                <input type="date" placeholder="datte de retour" required>
+            </div>
+
+            <textarea placeholder="Message ou demande spéciale (optionnel)"></textarea>
+
+            <button type="submit">Confirmer la réservation</button>
+        </form>
+    </div>
+    <script>
+
+        let voiture = document.querySelector("select");
+        let dateDebut = document.querySelectorAll("input[type='date']")[0];
+        let dateFin = document.querySelectorAll("input[type='date']")[1];
+        let result = document.getElementById("prixTotal");
+
+        function calcul() {
+            let prix = parseFloat(voiture.value);
+
+            if (!prix || !dateDebut.value || !dateFin.value) {
+                result.innerHTML = "";
+                return;
+            }
+
+            let d1 = new Date(dateDebut.value);
+            let d2 = new Date(dateFin.value);
+
+            let jours = (d2 - d1) / (1000 * 60 * 60 * 24);
+
+            if (jours <= 0) {
+                result.innerHTML = "";
+                return;
+            }
+
+            let total = prix * jours;
+
+            result.innerHTML = " Prix total: " + total + " DH (" + jours + " jours)";
+        }
+        voiture.addEventListener("change", calcul);
+        dateDebut.addEventListener("change", calcul);
+        dateFin.addEventListener("change", calcul);
+    </script>
+</body>
+</html>
+
+       
+  

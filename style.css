@@ -6,6 +6,7 @@
 
 :root {
   --primary: #5d138f;
+<<<<<<< HEAD
   --primary-dark: #4f1079;
   --secondary: #ffff;
   --dark: #1e293b;
@@ -18,6 +19,18 @@ body {
   background-color: var(--light-gray);
   color: var(--dark);
   font-family: 'Poppins', sans-serif;
+=======
+  --light: #ffffff;
+  --gray: #6b7280;
+  --transition: all 0.3s ease;
+}
+
+body{
+  background-color: var(--light);
+  color: var(--gray);
+  font-family: 'Poppins', sans-serif;
+  /* line-height: 1.6; */
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 /* HEADER */
@@ -28,6 +41,12 @@ header {
   padding: 30px;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+<<<<<<< HEAD
+=======
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   gap: 15px;
   flex-wrap: wrap;
   color: #fff;
@@ -56,8 +75,12 @@ ul li a {
 
 }
 
+<<<<<<< HEAD
 a:hover,
 .p_active {
+=======
+a:hover, .catalog {
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   border-radius: 20px;
   background-color: var(--gray);
   color: white;
@@ -66,6 +89,20 @@ a:hover,
 
 }
 
+<<<<<<< HEAD
+=======
+.nav-links a::after {
+
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 .logo {
   display: flex;
   align-items: center;
@@ -96,8 +133,13 @@ a:hover,
 
 /* Haut Section */
 .haut {
+<<<<<<< HEAD
   padding: 32px 16px 60px;
   background-color: #dfe7f0;
+=======
+  padding: 32px 16px 24px;
+  background-color: #f5f7fb;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   font-family: "Times", sans-serif;
 }
 
@@ -129,18 +171,22 @@ a:hover,
   line-height: 1.6;
 }
 
+<<<<<<< HEAD
 .cards,
 .filtres-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+=======
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 
 /* FILTRES */
 .filtres-section {
   background: white;
   border-radius: 12px;
   padding: 24px;
+<<<<<<< HEAD
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   display: flex;
   flex-wrap: wrap;
@@ -150,6 +196,18 @@ a:hover,
   z-index: 10;
   align-items: flex-end;
   justify-content: center;
+=======
+  margin-bottom: 32px;
+  margin: 20px 20 px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.filtres-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-end;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .filtre-item {
@@ -180,7 +238,10 @@ a:hover,
   border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
+<<<<<<< HEAD
   font-size: 16px;
+=======
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   transition: var(--transition);
 }
 
@@ -207,7 +268,11 @@ a:hover,
   padding: 8px;
   border: 2px solid #e2e8f0;
   border-radius: 20px;
+<<<<<<< HEAD
   font-size: 16px;
+=======
+  font-size: 14px;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   transition: var(--transition);
 }
 
@@ -223,13 +288,18 @@ a:hover,
 /* Transmission Option */
 .transm-option {
   display: flex;
+<<<<<<< HEAD
   gap: 16px;
+=======
+  gap: 8px;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   flex-wrap: wrap;
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   cursor: pointer;
   font-weight: 500;
   background: white;
@@ -237,6 +307,15 @@ a:hover,
   border-radius: 20px;
   border: 2px solid #e2e8f0;
   gap: 8px;
+=======
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white ;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid #e2e8f0;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   transition: var(--transition);
 }
 
@@ -246,6 +325,7 @@ a:hover,
 }
 
 .checkbox-label input[type="checkbox"] {
+<<<<<<< HEAD
   width: 18px;
   height: 18px;
 }
@@ -254,10 +334,21 @@ a:hover,
 .reset-btn {
   padding: 12px 24px;
   background: var(--primary);
+=======
+  width: 0px;
+  height: 0px;
+}
+
+/* Reset Button */ 
+.reset-btn {
+  padding: 12px 24px;
+  background: var(--light-gray);
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   border: 2px solid var(--dark);
   border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
+<<<<<<< HEAD
   font-size: 16px;
   color: #fff;
   transition: var(--transition);
@@ -267,6 +358,14 @@ a:hover,
   gap: 8px;
   margin: 25px auto;
   width: fit-content;
+=======
+  color: var(--gray);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .reset-btn:hover {
@@ -278,6 +377,7 @@ a:hover,
 
 /* GRID CARDS */
 .cards {
+<<<<<<< HEAD
   width: 98%;
   margin: 40px auto;
   padding: 0 10px;
@@ -315,12 +415,44 @@ a:hover,
   height: 150px;
   object-fit: cover;
   background: var(--gray);
+=======
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;   /* important bach overlay ytzat fo9ha */
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  /* bach ma ykhrj walo barra */
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .card-body {
   padding: 14px 16px 16px;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 .card-title {
   font-size: 16px;
   font-weight: 600;
@@ -329,8 +461,13 @@ a:hover,
 }
 
 .car-model {
+<<<<<<< HEAD
   color: var(--gray);
   font-size: 14px;
+=======
+    color: var(--gray);
+    font-size: 14px;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .card-prix {
@@ -348,14 +485,30 @@ a:hover,
 
 .card-tags {
   display: flex;
+<<<<<<< HEAD
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
+=======
+  /* ydihom f nafs ligne */
+  flex-wrap: wrap;
+  /* ila da9a l'espace, yhebto l ligne jaya */
+  gap: 8px;
+  /* space bin tags */
+  margin-bottom: 12px;
+  /* space ta7t tags, fo9 bouton */
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .tag {
   display: inline-flex;
+<<<<<<< HEAD
   align-items: center;
+=======
+  /* icon + texte f nafs ligne */
+  align-items: center;
+  /* vertical center */
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   padding: 4px 8px;
   border-radius: 999px;
   background: #f1f5f9;
@@ -367,6 +520,10 @@ a:hover,
   width: 16px;
   height: 16px;
   margin-right: 4px;
+<<<<<<< HEAD
+=======
+  /* space bin icon w texte */
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
 
 .tag-titre {
@@ -386,30 +543,52 @@ a:hover,
   transition: background 0.2s ease, transform 0.1s ease;
 }
 
+<<<<<<< HEAD
 /* OVERLAY HOVER */
 .card-overlay {
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 42, 0.45);
+=======
+/* ====== OVERLAY HOVER ====== */
+.card-overlay {
+  position: absolute;
+  inset: 0;   /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(15, 23, 42, 0.45);     /* noir transparant (flou visuel) */
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   display: flex;
   align-items: flex-end;
   justify-content: center;
   padding: 16px;
   opacity: 0;
+<<<<<<< HEAD
   pointer-events: none;
   transition: opacity 0.2s ease;
 }
 
+=======
+  pointer-events: none;    /* bach ma y3tarch clicks ila ma kaynach hover */
+  transition: opacity 0.2s ease;
+}
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 .card:hover .card-overlay {
   opacity: 1;
   pointer-events: auto;
 }
 
+<<<<<<< HEAD
 /* bouton voir plus */
 .voirplus-btn {
   width: 100%;
   padding: 14px;
   border-radius: 20px;
+=======
+/* bouton voir plus gowa overlay */
+.voirplus-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 200px;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   border: none;
   background: var(--dark);
   color: #ffffff;
@@ -425,6 +604,7 @@ a:hover,
   transform: translateY(-1px);
 }
 
+<<<<<<< HEAD
 /* CATALOGUE VOIR PLUS */
 .voirplus-content {
   text-align: center;
@@ -438,12 +618,21 @@ a:hover,
   border: none;
   color: #fff;
   border-radius: 100px;
+=======
+.catalog-voirplus-btn {
+  padding: 18px;
+  background: var(--dark);
+  border: none;
+  color: #ffffff;
+  border-radius: 200px;
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
   font-size: 18px;
   font-weight: 800;
   cursor: pointer;
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
+<<<<<<< HEAD
   gap: 8px;
 }
 
@@ -732,4 +921,9 @@ a:hover,
 .footer-contact i,
 .footer-hours i {
   color: #fff;
+=======
+  width: 50%;
+  margin-top: 20px;
+  box-shadow: 0 8px 20px rgba(38, 2, 83, 0.763);
+>>>>>>> d22656ce6dde00b85dd00eee753e1c1bcccc506f
 }
