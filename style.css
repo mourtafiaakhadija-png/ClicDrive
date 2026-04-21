@@ -27,17 +27,21 @@ header {
   align-items: center;
   padding: 30px;
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+ 
   gap: 15px;
   flex-wrap: wrap;
   color: #fff;
+  background: linear-gradient(135deg, rgba(13, 12, 14, 0.9) 0%, rgba(187, 154, 200, 0.8) 100%),
+  url(image1.jpg) center/cover no-repeat;
 }
 
 /* Navbar */
 nav {
-  justify-content: space-between;
-  gap: 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 20px;
+
 }
 
 ul {
@@ -48,18 +52,39 @@ ul {
   padding: 0;
 }
 
-ul li a {
-  color: white;
-  padding: 5px 15px;
-  text-decoration: none;
-  border-radius: 10px;
 
+.nav-links a {
+  position: relative; 
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease; 
 }
 
-a:hover,
+.nav-links a:hover {
+  background-color: var(--gray, #444); 
+  border-radius: 20px; 
+  transform: scale(1.05);
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary, #e74c3c); 
+  transition: width 0.3s ease; 
+}
+
+.nav-links a:hover::after {
+  width: 93%;
+}
+
+
 .p_active {
   border-radius: 20px;
-  background-color: var(--gray);
   color: white;
   transform: scale(1.05);
   transition: all 0.3s ease;
@@ -97,36 +122,41 @@ a:hover,
 /* Haut Section */
 .haut {
   padding: 32px 16px 60px;
-  background-color: #dfe7f0;
   font-family: "Times", sans-serif;
+  margin: 0 auto;
+  
+
 }
 
 .haut-content {
-  max-width: 900px;
-  margin: 0 auto;
   text-align: center;
+  color: #ffffff;
 }
 
 .haut-header {
   font-size: 12px;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: #6b7280;
+  color: #ffffff;
   margin-bottom: 8px;
+  
 }
 
 .haut-content h1 {
   font-size: 40px;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
   margin: 0 0 8px;
+
+
 }
 
 .haut-content p {
   font-size: 20px;
-  color: #4b5563;
   margin: 0;
   line-height: 1.6;
+  color: #ffffff;
+  text-align: center;
 }
 
 .cards,
